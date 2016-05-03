@@ -123,6 +123,7 @@ proof -
   }
   from this have "A \<or> \<not>A" by (rule ccontr)
   thus ?thesis .
+qed
 
 subsection \<open>Exercise 1c: logical expressions natural language3\<close>
 
@@ -131,9 +132,10 @@ prop "\<not>shining() \<longrightarrow> sad(me)"
 prop "raining \<or> not_raining"
 prop "going(she) \<longrightarrow> going(me) \<and> \<not>going(she) \<longrightarrow> \<not>going(me)"
 
-subsection \<open>Exercise 2\<close>
+section \<open>Exercise 2\<close>
 
-subsubsection \<open>a)\<close>
+subsection \<open>a)\<close>
+
 theorem A:
   assumes 1: "A \<and> B \<longrightarrow> C"
   assumes 2: "B \<longrightarrow> A"
@@ -146,7 +148,7 @@ proof -
   thus ?thesis.
 qed
 
-subsubsection \<open>b)\<close>
+subsection \<open>b)\<close>
 theorem B:
   assumes 1: "A"
   shows "B \<longrightarrow> A "
@@ -159,7 +161,7 @@ proof -
   thus ?thesis.
 qed
 
-subsubsection \<open>c)\<close>
+subsection \<open>c)\<close>
 theorem C:
   assumes 1: "A\<longrightarrow>(B\<longrightarrow>C)"
   shows "B \<longrightarrow> (A \<longrightarrow>C)"
@@ -178,7 +180,7 @@ proof -
 qed
 
 
-subsubsection \<open>d)\<close>
+subsection \<open>d)\<close>
 theorem D:
   assumes 1: "\<not>A"
   shows "A \<longrightarrow> B"

@@ -5,5 +5,6 @@ session "Isabelle" = "HOL" +
     (* Bar *)
   theories
     Example
+    Hilbert
   document_files
     "root.tex"

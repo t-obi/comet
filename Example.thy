@@ -205,6 +205,32 @@ proof -
   thus ?thesis.
 qed
 
+subsection \<open>e)\<close>
+theorem E:
+  shows "A \<or> \<not>A"
+proof -
+  {
+    assume 1: "\<not>(A \<or> \<not>A)"
+    {
+     assume 2: "A"
+     from 2 have 3: "A \<or> \<not>A" by (rule disjI1)
+     from 1 3 have "False" by (rule notE)
+    }
+    from this have 4: "\<not>A" by (rule notI)
+    {
+      assume 5: "\<not>A"
+      from this have "A \<or> \<not>A" by (rule disjI2)
+      from 1 this have "False" by (rule notE)
+    }
+    from this have 6: "\<not>\<not>A" by (rule notI)
+    from 6 have A by (rule notnotD)
+    from 4 this have "False" by (rule notE)
+  }
+  from this have 7: "\<not>\<not>(A \<or> \<not>A)" by (rule notI)
+  from this have "A \<or> \<not>A" by (rule notnotD)
+  thus ?thesis.
+qed
+
 (*<*)
 end
 (*>*)

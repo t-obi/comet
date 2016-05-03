@@ -128,9 +128,14 @@ qed
 subsection \<open>Exercise 1c: logical expressions natural language3\<close>
 
 prop "\<exists>ship. huge(ship) \<and> blue(ship)" 
-prop "\<not>shining() \<longrightarrow> sad(me)"
-prop "raining \<or> not_raining"
+prop "\<not>sun_shining \<longrightarrow> sad"
+prop "(israining(x) \<and> \<not>israining(x)) \<or> (\<not>israining(x) \<and> israining(x))"
 prop "going(she) \<longrightarrow> going(me) \<and> \<not>going(she) \<longrightarrow> \<not>going(me)"
+prop "\<forall>x. loves_chocholate(x) \<or> loves_icecream(x)"
+prop "\<exists>x. loves_icecream(x) \<and> loves_chocolate(x)"
+prop "\<forall>x.\<exists>y. play_together(x, y)"
+prop "\<forall>x. isMean(x) \<longrightarrow> (\<forall>x. \<forall>y. \<not>play_together(x, y))"
+prop "\<forall>p. isAnnoying(p) \<and> ofDog(p) \<longrightarrow> ofCat(p)"
 
 section \<open>Exercise 2\<close>
 

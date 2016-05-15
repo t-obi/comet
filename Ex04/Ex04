@@ -1,0 +1,8 @@
+theory Ex04
+imports Main
+
+begin
+
+section \<open>Exercise 4\<close>
+
+end

@@ -121,7 +121,6 @@ next
   from this 2 have "rich(parent(parent a))" by simp
   from this have "\<exists>X .rich(parent(parent X))" by (rule exI)
   thus "\<exists>X. rich(parent(parent X))" by (rule exI)
-  
-  
+
 qed
 end

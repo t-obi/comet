@@ -115,13 +115,10 @@ proof cases
   from this 1 have "rich(parent(parent a))" by simp
   thus "\<exists>X. rich(parent(parent X))" by (rule exI)
 next
-  assume 2: "\<forall>X. rich(parent X)"
-  fix a
-  from 2 have "rich(parent a)" by (rule allE)
+  assume 2: "\<not>(\<exists>X. \<not>rich(parent X))"
+  from this have "\<exists>X. rich(parent X)" by simp
+  from this obtain a where "rich(parent a)" by (rule exE)
   from this 2 have "rich(parent(parent a))" by simp
-  from this have "\<exists>X .rich(parent(parent X))" by (rule exI)
-  thus "\<exists>X. rich(parent(parent X))" by (rule exI)
-  
-  
+  thus "\<exists>X .rich(parent(parent X))" by (rule exI)
 qed
 end
